@@ -27,12 +27,18 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   Study the code for counter1 and counter2, then answer the questions below.
   
-  1. What is the difference between counter1 and counter2?
+  1. What is the difference between counter1 and counter2? 
+
+      A: counter1 has the variable count declared inside the function whereas counter2 has to look outside the function to find the variable count.
   
   2. Which of the two uses a closure? How can you tell?
+
+      A: counter2 uses closer and I can tell because it has to reach outside of it's initial scope to find the variable that it's looking for.
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+     A: counter1 could be preferable if you didn't need to use the variable count for another function later down the road. counter2 would be preferable if you need to repeat this function later.
 */
 
 // counter1 code
@@ -81,7 +87,7 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(inningcb){
+function finalScore(inningcb, num1){
   return {
     Home: inningcb(),
     Away: inningcb()
@@ -94,8 +100,18 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inningcb) {
+  const totalScore = [];
+  let homeScore = 0;
+  let awayScore = 0;
+
+  for(let i =0; i < 9; i++){
+    const currentScore = inningcb(scorecb);
+    homeScore = homeScore + currentScore.Home;
+    awayScore = awayScore + currentScore.Away;
+    totalScore.push(`Inning ${i + 1}; Away ${currentScore.Away} - Home: ${currentScore.Home}`);
+  }
+  return totalScore;
 }
 
 
