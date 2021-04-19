@@ -82,7 +82,7 @@ Use the finalScore function below to do the following:
 */ 
 
 function finalScore(inning, numOfInnings){
-  /*Code Here*/
+  /*Code Here Testing submission*/
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
