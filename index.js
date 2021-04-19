@@ -81,7 +81,7 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, numOfInnings){
   /*Code Here*/
 }
 
