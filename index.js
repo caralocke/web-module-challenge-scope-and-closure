@@ -151,9 +151,20 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScorecb, inningcb, numberOfInningscb) {
+  const totalGame = [];
+  let homeScore = 0;
+  let awayScore = 0;
+  for(let i = 0; i < numberOfInningscb; i++){
+    let currentScore = getInningScorecb(inningcb);
+    homeScore = homeScore + currentScore.Home;
+    awayScore = awayScore + currentScore.Away;
+    totalGame.push(`Inning: ${i + 1} Away ${currentScore.Away} - Home ${currentScore.Home}`);
+  }
+  return totalGame;
 }
+
+console.log(scoreboard(getInningScore, inning, 9));
 
 
 
