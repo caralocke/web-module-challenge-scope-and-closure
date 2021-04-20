@@ -76,7 +76,7 @@ b. Compare and contrast calling `dansRoll` the first and second time. What is al
 
 c. What is the lexical scope of `newRoll`?
 
-    A: 
+    A: The lexical scope of `newRoll` is where it is defined, on line 55.
 
 
 ### Task 3 - Stretch Goals
