@@ -161,7 +161,7 @@ function scoreboard(getInningScorecb, inningcb, numberOfInningscb) {
     awayScore += currentScore.Away;
     totalGame.push(`Inning: ${i + 1} Away ${currentScore.Away} - Home ${currentScore.Home}`);
   } // closes for loop
-  if(homeScore !=== awayScore){
+  if(homeScore !== awayScore){
     totalGame.push(`Final Score: Away ${awayScore} - Home ${homeScore}`);
   }
   else {
