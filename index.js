@@ -157,9 +157,15 @@ function scoreboard(getInningScorecb, inningcb, numberOfInningscb) {
   let awayScore = 0;
   for(let i = 0; i < numberOfInningscb; i++){
     let currentScore = getInningScorecb(inningcb);
-    homeScore = homeScore + currentScore.Home;
-    awayScore = awayScore + currentScore.Away;
+    homeScore += currentScore.Home;
+    awayScore += currentScore.Away;
     totalGame.push(`Inning: ${i + 1} Away ${currentScore.Away} - Home ${currentScore.Home}`);
+  } // closes for loop
+  if(homeScore !=== awayScore){
+    totalGame.push(`Final Score: Away ${awayScore} - Home ${homeScore}`);
+  }
+  else {
+    totalGame.push(`This game will require extra innings: Away ${awayScore} - Home ${homeScore}`);
   }
   return totalGame;
 }
